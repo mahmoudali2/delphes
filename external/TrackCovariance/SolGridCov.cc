@@ -120,7 +120,7 @@ Bool_t SolGridCov::IsAccepted(TVector3 x, TVector3 p, SolGeom* G)
 	else
 	{
 		SolTrack* trk = new SolTrack(x, p, G);
-		if (trk->nmHit() >= fNminHits)Accept = kTRUE;
+		if (trk->totalHits() >= fNminHits)Accept = kTRUE;
 		delete trk;
 	}
 	//

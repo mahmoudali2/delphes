@@ -69,6 +69,7 @@ public:
 	// Track hit management
 	Int_t nHit();
 	Int_t nmHit();
+	Int_t totalHits();  // number of total hits (measurements) in all different layers
 	Bool_t HitLayer(Int_t Layer, Double_t &R, Double_t &phi, Double_t &zz);
 	Int_t HitList(Int_t *&ihh, Double_t *&rhh, Double_t *&zhh);
 	Int_t HitListXYZ(Int_t *&ihh, Double_t *&Xh, Double_t *&Yh, Double_t *&Zh);
