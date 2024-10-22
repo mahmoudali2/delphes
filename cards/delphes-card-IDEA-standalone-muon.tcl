@@ -12,15 +12,15 @@ set RandomSeed 123
 
 ## MOD2: set vtx mode timing to MC truth
 
-set B 2.0
+set B 1.8
 set R 6.0
 set HL 6.0
 
 ## Drift chamber coordinates
-set DCHZMIN -6.0
-set DCHZMAX 6.0
-set DCHRMIN 0.001
-set DCHRMAX 6.0
+set DCHZMIN -2.125
+set DCHZMAX 2.125
+set DCHRMIN 0.345
+set DCHRMAX 2.02
 
 
 #######################################
@@ -224,14 +224,14 @@ module TrackCovariance TrackSmearing {
 
       # barrel  name       zmin   zmax   r        w (m)      X0        n_meas  th_up (rad) th_down (rad)    reso_up (m)   reso_down (m)  flag
 
-      1 PIPE -100 100 0.01 0.00235 0.35276 2 0 1.5708 3e-06 3e-06 1
-      1 VTXLOW -0.0965 0.0965 0.012 0.00028 0.0937 2 0 1.5708 3e-06 3e-06 0
+      1 PIPE -100 100 0.01 0.00235 0.35276 2 0 1.5708 1 1 1
+      1 VTXLOW -0.0965 0.0965 0.012 0.00028 0.0937 0 0 0 0 0 0
       1 VTXLOW -0.1609 0.1609 0.02 0.00028 0.0937 0 0 0 0 0 0
       1 VTXLOW -0.2575 0.2575 0.031525 0.00028 0.0937 0 0 0 0 0 0 
       1 VTXLOW -0.1609 0.1609 0.15 0.00028 0.0937 0 0 0 0 0 0
-      1 VTXHIGH -0.3263 0.3263 0.315 0.00047 0.0937 2 0 1.5708 3e-06 3e-06 0
+      1 VTXHIGH -0.3263 0.3263 0.315 0.00047 0.0937 0 0 0 0 0 0
       1 DCHCANI -2.125 2.125 0.345 0.0002 0.237223 0 0 0 0 0 0
-      1 DCH -2 2 0.36 0.0147748 1400 1 0.0203738 0 0.0001 0 0
+      1 DCH -2 2 0.36 0.0147748 1400 0 0 0 0 0 0
       1 DCH -2 2 0.374775 0.0147748 1400 0 0 0 0 0 0
       1 DCH -2 2 0.38955 0.0147748 1400 0 0 0 0 0 0
       1 DCH -2 2 0.404324 0.0147748 1400 0 0 0 0 0 0
@@ -350,13 +350,16 @@ module TrackCovariance TrackSmearing {
       1 BPRESH -2.55 2.55 2.45 0.02 1 2 0 1.5708 7e-05 0.01 0
       1 BDRCALO -4.5 4.5 2.5 2.0 0.1 0 0 0 0 0 0
       1 BMUON -4.5 4.5 4.5 0.01 1 2 0 1.5708 0.0004 0.0004 1
-      1 BMUON -4.5 4.5 4.56 0.01 1 2 0 1.5708 0.0004 0.0004 1      
+      1 BMUON -4.5 4.5 4.56 0.01 1 2 0 1.5708 0.0004 0.0004 1
       1 BYOKE -4.5 4.5 4.62 0.3 0.0176 1 0 0 0 0 0
       1 BMUON -4.5 4.5 4.92 0.01 1 2 0 1.5708 0.0004 0.0004 1
       1 BMUON -4.5 4.5 4.98 0.01 1 2 0 1.5708 0.0004 0.0004 1
       1 BYOKE -4.5 4.5 5.04 0.3 0.0176 1 0 0 0 0 0
       1 BMUON -5.46 5.46 5.34 0.01 1 2 0 1.5708 0.0004 0.0004 1
-      1 BMUON -5.46 5.46 5.4 0.01 1 2 0 1.5708 0.0004 0.0004 1        
+      1 BMUON -5.46 5.46 5.4 0.01 1 2 0 1.5708 0.0004 0.0004 1
+      1 BYOKE -4.5 4.5 5.42 0.3 0.0176 1 0 0 0 0 0
+      1 BMUON -5.46 5.46 5.72 0.01 1 2 0 1.5708 0.0004 0.0004 1
+      1 BMUON -5.46 5.46 5.78 0.01 1 2 0 1.5708 0.0004 0.0004 1             
       2 VTXDSK 0.105 0.29 -0.93 0.00028 0.0937  2 0 1.5708 7e-06 7e-06 0
       2 VTXDSK 0.075 0.29 -0.62 0.00028 0.0937 0 0 0 0 0 0
       2 VTXDSK 0.0365 0.2515 -0.2575 0.00028 0.0937 0 0 0 0 0 0
@@ -383,6 +386,9 @@ module TrackCovariance TrackSmearing {
       2 FYOKE 0.7 5.32 -5.04 0.3 0.0176 1 0 0 0 0 0
       2 FMUON 0.7 5.32 -5.34 0.01 1 2 0 1.5708 0.0004 0.0004 1
       2 FMUON 0.7 5.32 -5.4 0.01 1 2 0 1.5708 0.0004 0.0004 1
+      2 FYOKE 0.7 5.32 -5.42 0.3 0.0176 1 0 0 0 0 0
+      2 FMUON 0.7 5.32 -5.72 0.01 1 2 0 1.5708 0.0004 0.0004 1
+      2 FMUON 0.7 5.32 -5.78 0.01 1 2 0 1.5708 0.0004 0.0004 1      
       2 FMUON 0.7 5.32 4.5 0.01 1 2 0 1.5708 0.0004 0.0004 1
       2 FMUON 0.7 5.32 4.56 0.01 1 2 0 1.5708 0.0004 0.0004 1
       2 FYOKE 0.7 5.32 4.62 0.3 0.0176 1 0 0 0 0 0
@@ -391,6 +397,9 @@ module TrackCovariance TrackSmearing {
       2 FYOKE 0.7 5.32 5.04 0.3 0.0176 1 0 0 0 0 0
       2 FMUON 0.7 5.32 5.34 0.01 1 2 0 1.5708 0.0004 0.0004 1
       2 FMUON 0.7 5.32 5.4 0.01 1 2 0 1.5708 0.0004 0.0004 1
+      2 FYOKE 0.7 5.32 5.42 0.3 0.0176 1 0 0 0 0 0
+      2 FMUON 0.7 5.32 5.72 0.01 1 2 0 1.5708 0.0004 0.0004 1
+      2 FMUON 0.7 5.32 5.78 0.01 1 2 0 1.5708 0.0004 0.0004 1       
     }
 
 }
@@ -406,7 +415,7 @@ module ClusterCounting ClusterCounting {
 
   set Bz $B
 
-  ## check that these are consistent with DCHCANI/DCHNANO parameters in TrackCovariance module
+  ## check that these are consistent with DCHCANI/DCHCANO parameters in TrackCovariance module
   set Rmin $DCHRMIN
   set Rmax $DCHRMAX
   set Zmin $DCHZMIN

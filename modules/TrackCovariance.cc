@@ -126,6 +126,8 @@ void TrackCovariance::Process()
   Double_t ZinPos = fGeometry->GetZminPos();
   Double_t ZinNeg = fGeometry->GetZminNeg();
 
+  std::cout<< "Rmin in Barrel:" << Rin <<std::endl;
+
   fItInputArray->Reset();
   while((candidate = static_cast<Candidate *>(fItInputArray->Next())))
   {

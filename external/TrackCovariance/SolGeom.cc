@@ -123,9 +123,13 @@ void SolGeom::SetMinBoundaries()
 		}
 		if (ftyLay[i] == 2) {				// Disks
 			if (frPos[i] > 0.0 && frPos[i] < fZminPos) fZminPos = frPos[i];	// Positive direction
+      cout << "Zmin in Positive Endcap:" << fZminPos << endl;
 			if (frPos[i] < 0.0 && frPos[i] > fZminNeg) fZminNeg = frPos[i];	// Negative direction
+      cout << "Zmin in Negative Endcap:" << fZminNeg << endl;
 		}
 	}
+
+  std::cout<< "Rmin in Barrel:" << fRmin <<std::endl;
 }
 
 //
