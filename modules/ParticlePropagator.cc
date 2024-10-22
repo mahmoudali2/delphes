@@ -139,7 +139,7 @@ void ParticlePropagator::Process()
 
   if(!fBeamSpotInputArray || fBeamSpotInputArray->GetSize() == 0)
   {
-    beamSpotPosition.SetXYZT(0.0, 0.0, 0.0, 0.0);
+    beamSpotPosition.SetXYZT(0.5, 0.5, 0.0, 0.0);
   }
   else
   {
